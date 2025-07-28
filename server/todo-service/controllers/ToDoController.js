@@ -125,7 +125,7 @@ exports.getToDoSummary = async (req, res) => {
     try {
         console.log("category is there")
         const sortOrder = due === '1' || due === '-1' ? parseInt(due) : 1;
-        tasks = await ToDo.find({ ...typeFilter, ...categoryFilter, user: user.id })
+        const tasks = await ToDo.find({ ...typeFilter, ...categoryFilter, user: user.id })
             .sort({ datetime: sortOrder });
 
         const [todayCount, overdueCount, upcomingCount, completedCount] = await Promise.all([

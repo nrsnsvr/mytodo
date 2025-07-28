@@ -17,12 +17,15 @@ app.use(
       credentials: true,
    })
 );
-app.use(handleErrors)
+
 app.use("/", authRoutes);
 
 app.use("/test", (req, res) => {
-   return "Auth service running successfully..."
+   res.send("Auth service running successfully...")
 })
+
+// Error handler middleware should be last
+app.use(handleErrors)
 
 connectDB()
    .then(() => {

@@ -10,12 +10,14 @@ const app = express();
 
 app.use(cors());
 app.use(express.json())
-app.use(handleErrors)
 app.use("/", userRoutes);
 
 app.use("/test", (req, res) => {
-   return "Auth service running successfully..."
+   res.send("User service running successfully...")
 })
+
+// Error handler middleware should be last
+app.use(handleErrors)
 
 connectDB()
    .then(() => {
