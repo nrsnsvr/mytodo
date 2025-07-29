@@ -1,5 +1,5 @@
 // eslint-disable-next-line react/prop-types
-function Input({ name, type, placeholder, value, maxLength, onChange }) {
+function Input({ name, type, placeholder, value, maxLength, onChange, ...props }) {
     return (
         <input
             type={type}
@@ -9,6 +9,7 @@ function Input({ name, type, placeholder, value, maxLength, onChange }) {
             placeholder={placeholder}
             maxLength={maxLength}
             className="bg-transparent w-full p-3 my-3 rounded border border-blue-900 outline-none focus:border-primary focus:bg-transparent text-sm"
+            {...props}
         />
     );
 }

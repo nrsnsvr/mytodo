@@ -42,19 +42,19 @@ function Login() {
 
    return (
       <div className="min-h-screen w-full p-2 flex items-center justify-center">
-         <form className="w-full max-w-96 shadow-md p-4 border" onSubmit={onSubmit}>
+         <form className="w-full max-w-96 shadow-md p-4 border" onSubmit={onSubmit} data-testid="login-form">
             <h3 className="text-blue-900 text-2xl font-extrabold mb-5">
                MyToDo - Sign in
             </h3>
 
             <div className="space-y-4">
-               <Input name="email" type="email" placeholder="Email address" value={inputs.email} onChange={onInputChange} />
-               <Input name="password" type="password" placeholder="Password" value={inputs.password} onChange={onInputChange} />
+               <Input name="email" type="email" placeholder="Email address" value={inputs.email} onChange={onInputChange} data-testid="email-input" />
+               <Input name="password" type="password" placeholder="Password" value={inputs.password} onChange={onInputChange} data-testid="password-input" />
             </div>
 
             <div className="mt-5">
                {
-                  loggingIn ? <LoadingButton text="Logging in..." /> : <Button text="Login" onClick={onEmailLogin} />
+                  loggingIn ? <LoadingButton text="Logging in..." /> : <Button text="Login" onClick={onEmailLogin} data-testid="login-button" />
                }
             </div>
 
@@ -75,7 +75,7 @@ function Login() {
 
             <p className="text-center text-sm mt-4">
                New member?  
-               <Link className="text-blue-600 hover:underline font-semibold" to={"/register"}> Create new account</Link>
+               <Link className="text-blue-600 hover:underline font-semibold" to={"/register"} data-testid="register-link"> Create new account</Link>
             </p>
          </form>
       </div>

@@ -14,7 +14,7 @@ function Home() {
     const {todo} = useSelector(state => state.todo)
 
     return (
-        <main className="font-AfacadFlux">
+        <main className="font-AfacadFlux" data-testid="home-page">
             <Header />
             <AddButton onAddClick={() => setIsAdd(!isAdd)} />
             {/* <ToDoContext.Provider value={{ allTodos, toDo, loading, error, getAllToDo, getToDoById, addToDo, editToDo, deleteToDo, setToDo }}> */}

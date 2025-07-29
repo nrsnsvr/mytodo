@@ -64,6 +64,7 @@ function ToDoForm({ onCancel }) {
             <form
                 className="p-3 bg-blue-400 flex-col flex gap-4 w-full max-w-96"
                 onSubmit={handleSubmit}
+                data-testid="todo-form"
             >
                 <h1 className="text-lg font-bold">{todo ? "Edit" : "New"} TODO</h1>
                 <select
@@ -71,6 +72,7 @@ function ToDoForm({ onCancel }) {
                     name="category"
                     value={toDoData.category}
                     onChange={(e) => handleInputChange(e.target.name, e.target.value)}
+                    data-testid={todo ? "category-edit-select" : "category-select"}
                 >
                     {
                         categories.map((category) => {
@@ -93,6 +95,7 @@ function ToDoForm({ onCancel }) {
                     name="task"
                     value={toDoData.task}
                     onChange={(e) => handleInputChange(e.target.name, e.target.value)}
+                    data-testid={todo ? "todo-edit-input" : "todo-input"}
                 />
                 <input
                     className="flex-1 border-2 border-blue-900 text-blue-950 p-3 outline-none focus:ring-2 focus:ring-blue-500"
@@ -102,6 +105,7 @@ function ToDoForm({ onCancel }) {
                     name="datetime"
                     value={toDoData.datetime}
                     onChange={(e) => handleInputChange(e.target.name, e.target.value)}
+                    data-testid="datetime-input"
                 />
                 {
                     todo ?
@@ -110,12 +114,14 @@ function ToDoForm({ onCancel }) {
                                 <button
                                     className="bg-gray-500 px-6 py-3 hover:bg-gray-600 text-white focus:ring-2 focus:ring-gray-300"
                                     onClick={onCancelClick}
+                                    data-testid="cancel-button"
                                 >
                                     Cancel
                                 </button>
                                 <button
                                     className="bg-blue-900 px-6 py-3 hover:bg-blue-950 text-white focus:ring-2 focus:ring-blue-500 rounded-r"
                                     onClick={onEdit}
+                                    data-testid="save-button"
                                 >
                                     Update
                                 </button>
@@ -131,6 +137,7 @@ function ToDoForm({ onCancel }) {
                                 <button
                                     className="bg-blue-900 px-6 py-3 hover:bg-blue-950 text-white focus:ring-2 focus:ring-blue-500 rounded-sm"
                                     onClick={onAdd}
+                                    data-testid="add-todo-button"
                                 >
                                     Add
                                 </button>

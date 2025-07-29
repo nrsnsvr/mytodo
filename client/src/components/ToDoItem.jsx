@@ -21,18 +21,18 @@ function ToDoItem({ todo, deleteToDo, editToDo, getToDoById }) {
 
     return (
 
-        <div className="flex flex-col px-4 py-3  *:text-blue-950 items-center rounded mb-3 bg-blue-100 hover:bg-blue-200">
+        <div className="flex flex-col px-4 py-3  *:text-blue-950 items-center rounded mb-3 bg-blue-100 hover:bg-blue-200" data-testid="todo-item">
 
             <div className='flex *:text-blue-950 items-center w-full'>
                 <p className='flex-1'>
-                    <span className='capitalize'>{todo.task}</span>
-                    <span className={`px-2 py-0 capitalize rounded-full border border-indigo-700 text-indigo-700 bg-indigo-200 ml-2 text-xs`}>
+                    <span className='capitalize' data-testid="todo-text">{todo.task}</span>
+                    <span className={`px-2 py-0 capitalize rounded-full border border-indigo-700 text-indigo-700 bg-indigo-200 ml-2 text-xs`} data-testid="todo-category">
                         {todo.category.charAt(0).toUpperCase() + todo.category.slice(1).toLowerCase()}
                     </span>
                 </p>
 
                 <p className='flex items-center *:p-2 *:rounded *:transition-all *:duration-100'>
-                    <span className='hover:bg-blue-300' onClick={onCheck}>
+                    <span className='hover:bg-blue-300' onClick={onCheck} data-testid="todo-checkbox">
                         {
                             todo.isCompleted ? (
                                 <FaCheckCircle size={20} color='green' />
@@ -42,17 +42,17 @@ function ToDoItem({ todo, deleteToDo, editToDo, getToDoById }) {
                         }
 
                     </span>
-                    <span className='hover:bg-blue-300' onClick={onEdit}>
+                    <span className='hover:bg-blue-300' onClick={onEdit} data-testid="edit-todo-button">
                         <FaPen size={15} color='purple' />
                     </span>
-                    <span className='hover:bg-blue-300' onClick={onDelete}>
+                    <span className='hover:bg-blue-300' onClick={onDelete} data-testid="delete-todo-button">
                         <FaTrashAlt size={15} color='red' />
                     </span>
                 </p>
             </div>
 
             <div className='w-full'>
-                <span className='capitalize'>{categorizeDate(todo.datetime)}</span>
+                <span className='capitalize' data-testid="todo-datetime">{categorizeDate(todo.datetime)}</span>
             </div>
 
         </div>

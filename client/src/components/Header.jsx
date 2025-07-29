@@ -57,7 +57,7 @@ function Header() {
                                 </ul>
                                 <ul className="py-1" role="none">
                                     <li onClick={logOut}>
-                                        <span className="block px-4 py-2 text-sm hover:bg-blue-100 cursor-pointer" role="menuitem">Sign out</span>
+                                        <span className="block px-4 py-2 text-sm hover:bg-blue-100 cursor-pointer" role="menuitem" data-testid="logout-button">Sign out</span>
                                     </li>
                                 </ul>
                             </div>

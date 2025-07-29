@@ -13,7 +13,7 @@ const ToDoList = () => {
     console.log(todos)
 
     return (
-        <section className="my-4 px-3 md:px-8">
+        <section className="my-4 px-3 md:px-8" data-testid="todo-list">
             <Filter />
             {
                 loading ? (

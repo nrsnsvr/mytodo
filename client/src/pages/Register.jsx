@@ -43,21 +43,21 @@ function Register() {
 
    return (
       <div className="min-h-screen w-full p-2 flex items-center justify-center">
-         <form className="w-full max-w-96 shadow-md p-4 border" onSubmit={onSubmit}>
+         <form className="w-full max-w-96 shadow-md p-4 border" onSubmit={onSubmit} data-testid="register-form">
             <h3 className="text-blue-900 text-2xl font-extrabold mb-5">
                MyToDo - Create account
             </h3>
 
             <div className="space-y-4">
-               <Input name="username" type="text" placeholder="Username" value={inputs.username} onChange={onInputChange} />
-               <Input name="email" type="email" placeholder="Email address" value={inputs.email} onChange={onInputChange} />
-               <Input name="phone" type="text" placeholder="Phone number (+94xxxxxxxxx)" value={inputs.phone} onChange={onInputChange} />
-               <Input name="password" type="password" placeholder="Password" value={inputs.password} onChange={onInputChange} />
+               <Input name="username" type="text" placeholder="Username" value={inputs.username} onChange={onInputChange} data-testid="username-input" />
+               <Input name="email" type="email" placeholder="Email address" value={inputs.email} onChange={onInputChange} data-testid="email-input" />
+               <Input name="phone" type="text" placeholder="Phone number (+94xxxxxxxxx)" value={inputs.phone} onChange={onInputChange} data-testid="phone-input" />
+               <Input name="password" type="password" placeholder="Password" value={inputs.password} onChange={onInputChange} data-testid="password-input" />
             </div>
 
             <div className="mt-5">
                {
-                  loading ? <LoadingButton text="Creating account..." /> : <Button text="Create account" onClick={onEmailRegister} />
+                  loading ? <LoadingButton text="Creating account..." /> : <Button text="Create account" onClick={onEmailRegister} data-testid="register-button" />
                }
             </div>
 

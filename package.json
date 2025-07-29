@@ -7,9 +7,16 @@
       "start-gateway": "npm start --prefix server/api-gateway",
       "start-server": "concurrently \"npm run start-user\" \"npm run start-auth\" \"npm run start-todo\" \"npm run start-gateway\"",
       "start-client": "npm run dev --prefix client",
-      "install-all": "npm install && npm install --prefix client && npm install --prefix server/user-service && npm install --prefix server/auth-service && npm install --prefix server/todo-service && npm install --prefix server/api-gateway"
+      "install-all": "npm install && npm install --prefix client && npm install --prefix server/user-service && npm install --prefix server/auth-service && npm install --prefix server/todo-service && npm install --prefix server/api-gateway",
+      "cypress:open": "cypress open",
+      "cypress:run": "cypress run --browser chrome",
+      "test:e2e": "cypress run --browser chrome",
+      "test:e2e:headed": "cypress run --headed --browser chrome"
    },
    "dependencies": {
       "concurrently": "^9.1.2"
+   },
+   "devDependencies": {
+      "cypress": "^14.5.3"
    }
 }
